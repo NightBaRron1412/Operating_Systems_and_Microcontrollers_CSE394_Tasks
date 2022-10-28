@@ -1,0 +1,7 @@
+main
+	SevenSeg_VidInit
+		DIO_VidSetPortMode
+	SevenSeg_VidDisplayNumber
+		____DoICP
+		DIO_VidSetPortValue
+	DIO_VidSetPortValue
