@@ -1,7 +1,7 @@
 # Drivers For PIC16F877A
 
 A repository for Operating systems and microcontrollers (CSE394) tasks & drivers built specifically for **PIC16F877A Micro-controller** with **layered Architecture** applied.  
-This is still being develped during my time enrolled in Operating systems and microcontrollers (CSE394) at Mansoura University in 2022.
+This is still being developed during my time enrolled in Operating systems and microcontrollers (CSE394) at Mansoura University in 2022.
 This repository can be useful to anyone in the process of learning Embedded Systems, and working with PIC.
 
 ## List of Existing Drivers (most recent)
