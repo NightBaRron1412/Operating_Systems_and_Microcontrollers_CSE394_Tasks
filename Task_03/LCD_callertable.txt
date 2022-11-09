@@ -1,0 +1,27 @@
+main
+	__CC2DW
+		____DoICP
+	CLCD_VidCreatSpecialChar
+		CLCD_VidSendCommand
+			DIO_VidSetPinValue
+			DIO_VidSetPortValue
+		CLCD_VidSendData
+			DIO_VidSetPinValue
+			DIO_VidSetPortValue
+	CLCD_VidInit
+		DIO_VidSetPortMode
+		DIO_VidSetPinMode
+		CLCD_VidSendCommand
+			DIO_VidSetPinValue
+			DIO_VidSetPortValue
+	CLCD_VidDisplayClear
+		CLCD_VidSendCommand
+			DIO_VidSetPinValue
+			DIO_VidSetPortValue
+	CLCD_VidGotoXY
+		CLCD_VidSendCommand
+			DIO_VidSetPinValue
+			DIO_VidSetPortValue
+	CLCD_VidSendData
+		DIO_VidSetPinValue
+		DIO_VidSetPortValue

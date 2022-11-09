@@ -1,0 +1,68 @@
+[DEVICE]
+Name=P16F877A
+Clock=16000000
+[FILES]
+File0=LCD.c
+File1=..\PIC16f877A _COTS\HAL\2-CLCD\CLCD_program.c
+File2=..\PIC16f877A _COTS\MCAL\1-DIO\DIO_program.c
+Count=3
+[BINARIES]
+Count=0
+[IMAGES]
+Count=0
+ActiveImageIndex=-1
+[OPENED_FILES]
+File0=LCD.c
+Count=1
+[EEPROM]
+Count=0
+[ACTIVE_COMMENTS_FILES]
+Count=0
+[OTHER_FILES]
+Count=0
+[SEARCH_PATH]
+Path0=..\PIC16f877A _COTS\HAL\2-CLCD\
+Path1=..\PIC16f877A _COTS\MCAL\1-DIO\
+Count=2
+[HEADER_PATH]
+Count=0
+[HEADERS]
+File0=..\include\Bit_Math.h
+File1=..\include\Std_Types.h
+File2=..\include\Utils.h
+File3=..\PIC16f877A _COTS\HAL\2-CLCD\CLCD_config.h
+File4=..\PIC16f877A _COTS\HAL\2-CLCD\CLCD_interface.h
+File5=..\PIC16f877A _COTS\HAL\2-CLCD\CLCD_private.h
+File6=..\PIC16f877A _COTS\MCAL\1-DIO\DIO_config.h
+File7=..\PIC16f877A _COTS\MCAL\1-DIO\DIO_interface.h
+File8=..\PIC16f877A _COTS\MCAL\1-DIO\DIO_private.h
+Count=9
+[PLDS]
+Count=0
+[Useses]
+Count=0
+[MEMORY_MODEL]
+Value=0
+[BUILD_TYPE]
+Value=0
+[ACTIVE_TAB]
+Value=LCD.c
+[USE_EEPROM]
+Value=0
+[USE_HEAP]
+Value=0
+[HEAP_SIZE]
+Value=0
+[EEPROM_DEFINITION]
+Value=
+[EXPANDED_NODES]
+Count=0
+[LIB_EXPANDED_NODES]
+Count=0
+[PROGRAMMER_TYPE]
+Value=mikroE mikroProg
+[CODEGRIP_OPTIONS]
+CODEGRIP_SPEED=4
+CODEGRIP_VERIFY_AFTER=1
+CODEGRIP_SWBP_ENABLED=0
+CODEGRIP_PROGRAMMING_TYPE=

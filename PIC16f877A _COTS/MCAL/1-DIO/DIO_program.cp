@@ -1,6 +1,6 @@
-#line 1 "D:/OS for MCs tasks/PIC16f877A _COTS/MCAL/1-DIO/DIO_program.c"
-#line 1 "d:/os for mcs tasks/pic16f877a _cots/mcal/1-dio/../../../include/std_types.h"
-#line 15 "d:/os for mcs tasks/pic16f877a _cots/mcal/1-dio/../../../include/std_types.h"
+#line 1 "D:/OS & MC tasks/PIC16f877A _COTS/MCAL/1-DIO/DIO_program.c"
+#line 1 "d:/os & mc tasks/pic16f877a _cots/mcal/1-dio/../../../include/std_types.h"
+#line 15 "d:/os & mc tasks/pic16f877a _cots/mcal/1-dio/../../../include/std_types.h"
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;
@@ -9,10 +9,10 @@ typedef signed short s16;
 typedef signed int s32;
 typedef float f32;
 typedef double f64;
-#line 1 "d:/os for mcs tasks/pic16f877a _cots/mcal/1-dio/../../../include/bit_math.h"
-#line 1 "d:/os for mcs tasks/pic16f877a _cots/mcal/1-dio/dio_private.h"
-#line 1 "d:/os for mcs tasks/pic16f877a _cots/mcal/1-dio/dio_interface.h"
-#line 15 "d:/os for mcs tasks/pic16f877a _cots/mcal/1-dio/dio_interface.h"
+#line 1 "d:/os & mc tasks/pic16f877a _cots/mcal/1-dio/../../../include/bit_math.h"
+#line 1 "d:/os & mc tasks/pic16f877a _cots/mcal/1-dio/dio_private.h"
+#line 1 "d:/os & mc tasks/pic16f877a _cots/mcal/1-dio/dio_interface.h"
+#line 15 "d:/os & mc tasks/pic16f877a _cots/mcal/1-dio/dio_interface.h"
 typedef enum
 {
 
@@ -51,7 +51,7 @@ void DIO_VidGetPinValue(u8 Copy_u8Port, u8 Copy_u8Pin, u8 *Copy_Pu8PinValue);
 void DIO_VidSetPortMode(u8 Copy_u8Port, u8 Copy_u8Mode);
 void DIO_VidSetPortValue(u8 Copy_u8Port, u8 Copy_u8Value);
 void DIO_VidGetPortValue(u8 Copy_u8Port, u8 *Copy_Pu8PortValue);
-#line 10 "D:/OS for MCs tasks/PIC16f877A _COTS/MCAL/1-DIO/DIO_program.c"
+#line 10 "D:/OS & MC tasks/PIC16f877A _COTS/MCAL/1-DIO/DIO_program.c"
 void DIO_VidSetPinMode(u8 Copy_u8Port, u8 Copy_u8Pin, u8 Copy_u8Mode)
 {
  if (Copy_u8Mode == INPUT)
