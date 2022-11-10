@@ -70,6 +70,7 @@ void DIO_VidSetPinMode(u8 Copy_u8Port, u8 Copy_u8Pin, u8 Copy_u8Mode)
   ( *((volatile u8 *)0x086) ) |= (1 << (Copy_u8Pin)) ;
  break;
  }
+ break;
  case (PORT_C):
   ( *((volatile u8 *)0x087) ) |= (1 << (Copy_u8Pin)) ;
  break;
@@ -195,6 +196,7 @@ void DIO_VidSetPortMode(u8 Copy_u8Port, u8 Copy_u8Mode)
   *((volatile u8 *)0x086)  = Copy_u8Mode;
  break;
  }
+ break;
  case (PORT_C):
   *((volatile u8 *)0x087)  = Copy_u8Mode;
  break;

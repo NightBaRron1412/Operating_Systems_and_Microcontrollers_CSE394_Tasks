@@ -3,15 +3,15 @@ hint: 0	1139	Available RAM: 352 [bytes], Available ROM: 8192 [bytes]
 diagnostics: 0	122	Compilation Started	std_types.h
 diagnostics: 41	123	Compiled Successfully	LCD.c
 diagnostics: 0	122	Compilation Started	std_types.h
-diagnostics: 133	123	Compiled Successfully	CLCD_program.c
-hint: 110	1164	Variable 'Local_u8CGRAMAddress' has been eliminated by optimizer	CLCD_program.c
+diagnostics: 222	123	Compiled Successfully	CLCD_program.c
+hint: 199	1164	Variable 'Local_u8CGRAMAddress' has been eliminated by optimizer	CLCD_program.c
 diagnostics: 0	122	Compilation Started	std_types.h
-warning: 134	1503	Result is not defined in function: 'DIO_u8GetPinValue'	DIO_program.c
-diagnostics: 207	123	Compiled Successfully	DIO_program.c
-diagnostics: 0	127	All files Compiled in 640 ms	 
+warning: 135	1503	Result is not defined in function: 'DIO_u8GetPinValue'	DIO_program.c
+diagnostics: 209	123	Compiled Successfully	DIO_program.c
+diagnostics: 0	127	All files Compiled in 562 ms	 
 hint: 0	1144	Used RAM (bytes): 29 (8%)  Free RAM (bytes): 323 (92%)	Used RAM (bytes): 29 (8%)  Free RAM (bytes): 323 (92%)
-hint: 0	1144	Used ROM (program words): 915 (11%)  Free ROM (program words): 7277 (89%)	Used ROM (program words): 915 (11%)  Free ROM (program words): 7277 (89%)
+hint: 0	1144	Used ROM (program words): 1039 (13%)  Free ROM (program words): 7153 (87%)	Used ROM (program words): 1039 (13%)  Free ROM (program words): 7153 (87%)
 diagnostics: 0	125	Project Linked Successfully	LCD.mcppi
-diagnostics: 0	128	Linked in 47 ms	 
-diagnostics: 0	129	Project 'LCD.mcppi' completed: 718 ms	 
-diagnostics: 0	103	Finished successfully: 10 Nov 2022, 01:54:26	LCD.mcppi
+diagnostics: 0	128	Linked in 32 ms	 
+diagnostics: 0	129	Project 'LCD.mcppi' completed: 610 ms	 
+diagnostics: 0	103	Finished successfully: 11 Nov 2022, 00:51:55	LCD.mcppi

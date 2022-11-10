@@ -25,6 +25,7 @@ void DIO_VidSetPinMode(u8 Copy_u8Port, u8 Copy_u8Pin, u8 Copy_u8Mode)
                 SET_BIT(TRISB, Copy_u8Pin);
                 break;
             }
+            break;
         case (PORT_C):
             SET_BIT(TRISC, Copy_u8Pin);
             break;
@@ -150,6 +151,7 @@ void DIO_VidSetPortMode(u8 Copy_u8Port, u8 Copy_u8Mode)
             TRISB = Copy_u8Mode;
             break;
         }
+        break;
     case (PORT_C):
         TRISC = Copy_u8Mode;
         break;

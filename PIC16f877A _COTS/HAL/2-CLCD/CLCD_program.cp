@@ -54,13 +54,14 @@ void DIO_VidGetPortValue(u8 Copy_u8Port, u8 *Copy_Pu8PortValue);
 void CLCD_VidSendCommand(u8 Copy_u8Command)
 {
 
+
  DIO_VidSetPinValue( PORT_B ,  PIN_0 , LOW);
 
 
  DIO_VidSetPinValue( PORT_B ,  PIN_1 , LOW);
 
 
- DIO_VidSetPortValue( PORT_D , Copy_u8Command);
+ DIO_VidSetPortValue( PORT_B , (Copy_u8Command & 0xF0));
 
 
  DIO_VidSetPinValue( PORT_B ,  PIN_2 , HIGH);
@@ -70,10 +71,30 @@ void CLCD_VidSendCommand(u8 Copy_u8Command)
 
 
  DIO_VidSetPinValue( PORT_B ,  PIN_2 , LOW);
+
+
+ delay_us(200);
+
+
+ DIO_VidSetPortValue( PORT_B , ((Copy_u8Command << 4) & 0xF0));
+
+
+ DIO_VidSetPinValue( PORT_B ,  PIN_2 , HIGH);
+
+
+ delay_ms(2);
+
+
+ DIO_VidSetPinValue( PORT_B ,  PIN_2 , LOW);
+#line 62 "D:/OS & MC tasks/PIC16f877A _COTS/HAL/2-CLCD/CLCD_program.c"
 }
 
 void CLCD_VidSendData(u8 Copy_u8Data)
 {
+
+
+ DIO_VidSetPortValue( PORT_B , Copy_u8Data & 0xF0);
+
 
  DIO_VidSetPinValue( PORT_B ,  PIN_0 , HIGH);
 
@@ -81,7 +102,25 @@ void CLCD_VidSendData(u8 Copy_u8Data)
  DIO_VidSetPinValue( PORT_B ,  PIN_1 , LOW);
 
 
- DIO_VidSetPortValue( PORT_D , Copy_u8Data);
+ DIO_VidSetPinValue( PORT_B ,  PIN_2 , HIGH);
+
+
+ delay_ms(2);
+
+
+ DIO_VidSetPinValue( PORT_B ,  PIN_2 , LOW);
+
+
+ delay_us(200);
+
+
+ DIO_VidSetPortValue( PORT_B , (Copy_u8Data << 4) & 0xF0);
+
+
+ DIO_VidSetPinValue( PORT_B ,  PIN_0 , HIGH);
+
+
+ DIO_VidSetPinValue( PORT_B ,  PIN_1 , LOW);
 
 
  DIO_VidSetPinValue( PORT_B ,  PIN_2 , HIGH);
@@ -91,12 +130,13 @@ void CLCD_VidSendData(u8 Copy_u8Data)
 
 
  DIO_VidSetPinValue( PORT_B ,  PIN_2 , LOW);
+#line 126 "D:/OS & MC tasks/PIC16f877A _COTS/HAL/2-CLCD/CLCD_program.c"
 }
 
 void CLCD_VidInit()
 {
 
- DIO_VidSetPortMode( PORT_D , PORT_OUTPUT);
+ DIO_VidSetPortMode( PORT_B , PORT_OUTPUT);
 
 
  DIO_VidSetPinMode( PORT_B , PIN_0, OUTPUT);
@@ -107,9 +147,10 @@ void CLCD_VidInit()
  delay_ms(40);
 
 
- CLCD_VidSendCommand(0b00111111);
-
-
+ CLCD_VidSendCommand(0b00110011);
+ CLCD_VidSendCommand(0b00110010);
+ CLCD_VidSendCommand(0b00101100);
+#line 153 "D:/OS & MC tasks/PIC16f877A _COTS/HAL/2-CLCD/CLCD_program.c"
  delay_us(49);
 
 

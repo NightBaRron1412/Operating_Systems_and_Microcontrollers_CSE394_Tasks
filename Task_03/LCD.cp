@@ -81,39 +81,40 @@ void CLCD_VidCreatSpecialChar(u8 *Copy_u8Pattern, u8 Copy_u8PatternNumber);
 void CLCD_VidDisplayClear();
 void CLCD_VidSendString(u8 *Copy_u8Str);
 #line 1 "d:/os & mc tasks/task_03/../pic16f877a _cots/hal/2-clcd/clcd_config.h"
-#line 7 "D:/OS & MC tasks/Task_03/LCD.c"
+#line 6 "D:/OS & MC tasks/Task_03/LCD.c"
 void main()
 {
 
+ CLCD_VidInit();
+
  CLCD_VidCreatSpecialChar(stickyMan, 1);
  CLCD_VidCreatSpecialChar(stickyMan_handsInverted, 2);
-
- CLCD_VidInit();
+ DIO_VidSetPortMode(PORT_B, PORT_OUTPUT);
  while (1)
  {
  u8 i = 0;
  s8 j = 12;
- for (i = 0; i < 12; i += 2)
+ for (i = 0; i < 15; i += 2)
  {
  CLCD_VidDisplayClear();
  CLCD_VidGotoXY(0, i);
  CLCD_VidSendData(1);
- delay_ms(200);
+ delay_ms(300);
  CLCD_VidDisplayClear();
  CLCD_VidGotoXY(0, i + 1);
  CLCD_VidSendData(2);
- delay_ms(200);
+ delay_ms(300);
  }
- for (j = 12; j > 0; j -= 2)
+ for (j = 15; j > 0; j -= 2)
  {
  CLCD_VidDisplayClear();
  CLCD_VidGotoXY(1, j);
  CLCD_VidSendData(1);
- delay_ms(200);
+ delay_ms(300);
  CLCD_VidDisplayClear();
  CLCD_VidGotoXY(1, j - 1);
  CLCD_VidSendData(2);
- delay_ms(200);
+ delay_ms(300);
  }
  }
 }
