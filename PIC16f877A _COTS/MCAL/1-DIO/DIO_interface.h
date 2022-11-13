@@ -39,7 +39,7 @@ typedef enum
     PIN_6,                    /* 6    */
     PIN_7                     /* 7    */
 
-} enut_DIO;
+} enum_DIO;
 
 /*------------------------------------Pins functions------------------------------------------------*/
 void DIO_VidSetPinMode(u8 Copy_u8Port, u8 Copy_u8Pin, u8 Copy_u8Mode);
