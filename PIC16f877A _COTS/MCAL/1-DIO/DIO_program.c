@@ -20,8 +20,12 @@ void DIO_VidSetPinMode(u8 Copy_u8Port, u8 Copy_u8Pin, u8 Copy_u8Mode)
             switch (Copy_u8Mode)
             {
             case (INPUT_PULLUP):
-                SET_BIT(OPTION_REG, RBPU);
+                CLR_BIT(OPTION_REG, RBPU);
+                SET_BIT(WPUB, Copy_u8Pin);
+                SET_BIT(TRISB, Copy_u8Pin);
+                break;
             default:
+                CLR_BIT(WPUB, Copy_u8Pin);
                 SET_BIT(TRISB, Copy_u8Pin);
                 break;
             }
@@ -146,8 +150,12 @@ void DIO_VidSetPortMode(u8 Copy_u8Port, u8 Copy_u8Mode)
         switch (Copy_u8Mode)
         {
         case (PORT_INPUT_PULLUP):
-            SET_BIT(OPTION_REG, RBPU);
+            CLR_BIT(OPTION_REG, RBPU);
+            WPUB = PORT_HIGH;
+            TRISB = Copy_u8Mode;
+            break;
         default:
+            WPUB = PORT_LOW;
             TRISB = Copy_u8Mode;
             break;
         }

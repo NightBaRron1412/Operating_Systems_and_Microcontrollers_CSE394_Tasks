@@ -35,6 +35,13 @@
 #define OPTION_REG *((volatile u8 *)0x081)
 #define RBPU 7
 
+/* Defining Option Register address and PORTB PULLUP control pin*/
+#define OPTION_REG *((volatile u8 *)0x081)
+#define RBPU 7
+
+/* Defining WEAK PULL-UP PORTB REGISTER */
+#define WPUB *((volatile u8 *)0x081)
+
 #endif /* DIO_PRIVATE_H */
 
 /*** end of file ***/
