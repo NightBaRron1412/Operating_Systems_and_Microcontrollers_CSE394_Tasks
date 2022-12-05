@@ -3,27 +3,27 @@ _CLCD_VidSendCommand:
 
 ;CLCD_program.c,5 :: 		void CLCD_VidSendCommand(u8 Copy_u8Command) /* Function to send commands to CLCD */
 ;CLCD_program.c,9 :: 		DIO_VidSetPinValue(CLCD_CTRL_PORT, CLCD_RS_PIN, LOW);
-	MOVLW      1
+	MOVLW      3
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Port+0
 	CLRF       FARG_DIO_VidSetPinValue_Copy_u8Pin+0
 	CLRF       FARG_DIO_VidSetPinValue_Copy_u8Value+0
 	CALL       _DIO_VidSetPinValue+0
 ;CLCD_program.c,12 :: 		DIO_VidSetPinValue(CLCD_CTRL_PORT, CLCD_RW_PIN, LOW);
-	MOVLW      1
+	MOVLW      3
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Port+0
 	MOVLW      1
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Pin+0
 	CLRF       FARG_DIO_VidSetPinValue_Copy_u8Value+0
 	CALL       _DIO_VidSetPinValue+0
 ;CLCD_program.c,15 :: 		DIO_VidSetPortValue(CLCD_DATA_PORT, (Copy_u8Command & 0xF0));
-	MOVLW      1
+	MOVLW      3
 	MOVWF      FARG_DIO_VidSetPortValue_Copy_u8Port+0
 	MOVLW      240
 	ANDWF      FARG_CLCD_VidSendCommand_Copy_u8Command+0, 0
 	MOVWF      FARG_DIO_VidSetPortValue_Copy_u8Value+0
 	CALL       _DIO_VidSetPortValue+0
 ;CLCD_program.c,18 :: 		DIO_VidSetPinValue(CLCD_CTRL_PORT, CLCD_EN_PIN, HIGH);
-	MOVLW      1
+	MOVLW      3
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Port+0
 	MOVLW      2
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Pin+0
@@ -42,7 +42,7 @@ L_CLCD_VidSendCommand0:
 	GOTO       L_CLCD_VidSendCommand0
 	NOP
 ;CLCD_program.c,24 :: 		DIO_VidSetPinValue(CLCD_CTRL_PORT, CLCD_EN_PIN, LOW);
-	MOVLW      1
+	MOVLW      3
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Port+0
 	MOVLW      2
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Pin+0
@@ -60,7 +60,7 @@ L_CLCD_VidSendCommand1:
 	GOTO       L_CLCD_VidSendCommand1
 	NOP
 ;CLCD_program.c,30 :: 		DIO_VidSetPortValue(CLCD_DATA_PORT, ((Copy_u8Command << 4) & 0xF0));
-	MOVLW      1
+	MOVLW      3
 	MOVWF      FARG_DIO_VidSetPortValue_Copy_u8Port+0
 	MOVF       FARG_CLCD_VidSendCommand_Copy_u8Command+0, 0
 	MOVWF      FARG_DIO_VidSetPortValue_Copy_u8Value+0
@@ -76,7 +76,7 @@ L_CLCD_VidSendCommand1:
 	ANDWF      FARG_DIO_VidSetPortValue_Copy_u8Value+0, 1
 	CALL       _DIO_VidSetPortValue+0
 ;CLCD_program.c,33 :: 		DIO_VidSetPinValue(CLCD_CTRL_PORT, CLCD_EN_PIN, HIGH);
-	MOVLW      1
+	MOVLW      3
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Port+0
 	MOVLW      2
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Pin+0
@@ -95,7 +95,7 @@ L_CLCD_VidSendCommand2:
 	GOTO       L_CLCD_VidSendCommand2
 	NOP
 ;CLCD_program.c,39 :: 		DIO_VidSetPinValue(CLCD_CTRL_PORT, CLCD_EN_PIN, LOW);
-	MOVLW      1
+	MOVLW      3
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Port+0
 	MOVLW      2
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Pin+0
@@ -110,28 +110,28 @@ _CLCD_VidSendData:
 
 ;CLCD_program.c,64 :: 		void CLCD_VidSendData(u8 Copy_u8Data) /* Function to send data to CLCD */
 ;CLCD_program.c,68 :: 		DIO_VidSetPortValue(CLCD_DATA_PORT, Copy_u8Data & 0xF0);
-	MOVLW      1
+	MOVLW      3
 	MOVWF      FARG_DIO_VidSetPortValue_Copy_u8Port+0
 	MOVLW      240
 	ANDWF      FARG_CLCD_VidSendData_Copy_u8Data+0, 0
 	MOVWF      FARG_DIO_VidSetPortValue_Copy_u8Value+0
 	CALL       _DIO_VidSetPortValue+0
 ;CLCD_program.c,71 :: 		DIO_VidSetPinValue(CLCD_CTRL_PORT, CLCD_RS_PIN, HIGH);
-	MOVLW      1
+	MOVLW      3
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Port+0
 	CLRF       FARG_DIO_VidSetPinValue_Copy_u8Pin+0
 	MOVLW      1
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Value+0
 	CALL       _DIO_VidSetPinValue+0
 ;CLCD_program.c,74 :: 		DIO_VidSetPinValue(CLCD_CTRL_PORT, CLCD_RW_PIN, LOW);
-	MOVLW      1
+	MOVLW      3
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Port+0
 	MOVLW      1
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Pin+0
 	CLRF       FARG_DIO_VidSetPinValue_Copy_u8Value+0
 	CALL       _DIO_VidSetPinValue+0
 ;CLCD_program.c,77 :: 		DIO_VidSetPinValue(CLCD_CTRL_PORT, CLCD_EN_PIN, HIGH);
-	MOVLW      1
+	MOVLW      3
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Port+0
 	MOVLW      2
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Pin+0
@@ -150,7 +150,7 @@ L_CLCD_VidSendData3:
 	GOTO       L_CLCD_VidSendData3
 	NOP
 ;CLCD_program.c,83 :: 		DIO_VidSetPinValue(CLCD_CTRL_PORT, CLCD_EN_PIN, LOW);
-	MOVLW      1
+	MOVLW      3
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Port+0
 	MOVLW      2
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Pin+0
@@ -168,7 +168,7 @@ L_CLCD_VidSendData4:
 	GOTO       L_CLCD_VidSendData4
 	NOP
 ;CLCD_program.c,89 :: 		DIO_VidSetPortValue(CLCD_DATA_PORT, (Copy_u8Data << 4) & 0xF0);
-	MOVLW      1
+	MOVLW      3
 	MOVWF      FARG_DIO_VidSetPortValue_Copy_u8Port+0
 	MOVF       FARG_CLCD_VidSendData_Copy_u8Data+0, 0
 	MOVWF      FARG_DIO_VidSetPortValue_Copy_u8Value+0
@@ -184,21 +184,21 @@ L_CLCD_VidSendData4:
 	ANDWF      FARG_DIO_VidSetPortValue_Copy_u8Value+0, 1
 	CALL       _DIO_VidSetPortValue+0
 ;CLCD_program.c,92 :: 		DIO_VidSetPinValue(CLCD_CTRL_PORT, CLCD_RS_PIN, HIGH);
-	MOVLW      1
+	MOVLW      3
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Port+0
 	CLRF       FARG_DIO_VidSetPinValue_Copy_u8Pin+0
 	MOVLW      1
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Value+0
 	CALL       _DIO_VidSetPinValue+0
 ;CLCD_program.c,95 :: 		DIO_VidSetPinValue(CLCD_CTRL_PORT, CLCD_RW_PIN, LOW);
-	MOVLW      1
+	MOVLW      3
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Port+0
 	MOVLW      1
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Pin+0
 	CLRF       FARG_DIO_VidSetPinValue_Copy_u8Value+0
 	CALL       _DIO_VidSetPinValue+0
 ;CLCD_program.c,98 :: 		DIO_VidSetPinValue(CLCD_CTRL_PORT, CLCD_EN_PIN, HIGH);
-	MOVLW      1
+	MOVLW      3
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Port+0
 	MOVLW      2
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Pin+0
@@ -217,7 +217,7 @@ L_CLCD_VidSendData5:
 	GOTO       L_CLCD_VidSendData5
 	NOP
 ;CLCD_program.c,104 :: 		DIO_VidSetPinValue(CLCD_CTRL_PORT, CLCD_EN_PIN, LOW);
-	MOVLW      1
+	MOVLW      3
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Port+0
 	MOVLW      2
 	MOVWF      FARG_DIO_VidSetPinValue_Copy_u8Pin+0
@@ -232,25 +232,25 @@ _CLCD_VidInit:
 
 ;CLCD_program.c,128 :: 		void CLCD_VidInit() /* Function to initialize CLCD */
 ;CLCD_program.c,131 :: 		DIO_VidSetPortMode(CLCD_DATA_PORT, PORT_OUTPUT);
-	MOVLW      1
+	MOVLW      3
 	MOVWF      FARG_DIO_VidSetPortMode_Copy_u8Port+0
 	CLRF       FARG_DIO_VidSetPortMode_Copy_u8Mode+0
 	CALL       _DIO_VidSetPortMode+0
 ;CLCD_program.c,134 :: 		DIO_VidSetPinMode(CLCD_CTRL_PORT, PIN_0, OUTPUT);
-	MOVLW      1
+	MOVLW      3
 	MOVWF      FARG_DIO_VidSetPinMode_Copy_u8Port+0
 	CLRF       FARG_DIO_VidSetPinMode_Copy_u8Pin+0
 	CLRF       FARG_DIO_VidSetPinMode_Copy_u8Mode+0
 	CALL       _DIO_VidSetPinMode+0
 ;CLCD_program.c,135 :: 		DIO_VidSetPinMode(CLCD_CTRL_PORT, PIN_1, OUTPUT);
-	MOVLW      1
+	MOVLW      3
 	MOVWF      FARG_DIO_VidSetPinMode_Copy_u8Port+0
 	MOVLW      1
 	MOVWF      FARG_DIO_VidSetPinMode_Copy_u8Pin+0
 	CLRF       FARG_DIO_VidSetPinMode_Copy_u8Mode+0
 	CALL       _DIO_VidSetPinMode+0
 ;CLCD_program.c,136 :: 		DIO_VidSetPinMode(CLCD_CTRL_PORT, PIN_2, OUTPUT);
-	MOVLW      1
+	MOVLW      3
 	MOVWF      FARG_DIO_VidSetPinMode_Copy_u8Port+0
 	MOVLW      2
 	MOVWF      FARG_DIO_VidSetPinMode_Copy_u8Pin+0

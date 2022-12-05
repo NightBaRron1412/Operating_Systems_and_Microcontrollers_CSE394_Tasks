@@ -1,0 +1,10 @@
+main
+	DIO_VidSetPinMode
+	DIO_VidSetPortMode
+	GIE_VidEnable
+	EXTI_VidINTInit
+	EXTI_VidINTEnable
+	EXTI_VidINTSetCallBack
+	DIO_VidSetPinValue
+interrupt
+	____DoIFC

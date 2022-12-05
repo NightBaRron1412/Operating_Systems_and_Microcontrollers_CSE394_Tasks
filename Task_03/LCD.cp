@@ -38,7 +38,7 @@ typedef enum
  PIN_6,
  PIN_7
 
-} enut_DIO;
+} enum_DIO;
 
 
 void DIO_VidSetPinMode(u8 Copy_u8Port, u8 Copy_u8Pin, u8 Copy_u8Mode);
@@ -80,8 +80,7 @@ void CLCD_VidGotoXY(u8 Copy_u8XPos, u8 Copy_u8YPos);
 void CLCD_VidCreatSpecialChar(u8 *Copy_u8Pattern, u8 Copy_u8PatternNumber);
 void CLCD_VidDisplayClear();
 void CLCD_VidSendString(u8 *Copy_u8Str);
-#line 1 "d:/os & mc tasks/task_03/../pic16f877a _cots/hal/2-clcd/clcd_config.h"
-#line 6 "D:/OS & MC tasks/Task_03/LCD.c"
+#line 5 "D:/OS & MC tasks/Task_03/LCD.c"
 void main()
 {
 

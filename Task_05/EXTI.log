@@ -1,0 +1,17 @@
+0	1	mikroCPIC1618.exe -MSF -DBG -pP16F877A -DL -O11111114 -fo16 -N"D:\OS & MC tasks\Task_05\EXTI.mcppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16\" -SP"D:\OS & MC tasks\Task_05\" -SP"D:\OS & MC tasks\PIC16f877A _COTS\MCAL\1-DIO\" -SP"D:\OS & MC tasks\PIC16f877A _COTS\MCAL\3-EXTI\" -SP"D:\OS & MC tasks\PIC16f877A _COTS\MCAL\2-GIE\" -IP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16\" "EXTI.c" "DIO_program.c" "EXTI_program.c" "GIE_program.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl"	 
+hint: 0	1139	Available RAM: 352 [bytes], Available ROM: 8192 [bytes]	 
+diagnostics: 0	122	Compilation Started	std_types.h
+diagnostics: 44	123	Compiled Successfully	EXTI.c
+diagnostics: 0	122	Compilation Started	std_types.h
+diagnostics: 215	123	Compiled Successfully	DIO_program.c
+diagnostics: 0	122	Compilation Started	std_types.h
+diagnostics: 82	123	Compiled Successfully	EXTI_program.c
+diagnostics: 0	122	Compilation Started	std_types.h
+diagnostics: 16	123	Compiled Successfully	GIE_program.c
+diagnostics: 0	127	All files Compiled in 922 ms	 
+hint: 0	1144	Used RAM (bytes): 16 (5%)  Free RAM (bytes): 336 (95%)	Used RAM (bytes): 16 (5%)  Free RAM (bytes): 336 (95%)
+hint: 0	1144	Used ROM (program words): 998 (12%)  Free ROM (program words): 7194 (88%)	Used ROM (program words): 998 (12%)  Free ROM (program words): 7194 (88%)
+diagnostics: 0	125	Project Linked Successfully	EXTI.mcppi
+diagnostics: 0	128	Linked in 31 ms	 
+diagnostics: 0	129	Project 'EXTI.mcppi' completed: 985 ms	 
+diagnostics: 0	103	Finished successfully: 05 Dec 2022, 02:16:22	EXTI.mcppi

@@ -1,0 +1,19 @@
+0	1	mikroCPIC1618.exe -MSF -DBG -pP16F877A -DL -O11111114 -fo16 -N"D:\OS & MC tasks\Task_04\KPD.mcppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16\" -SP"D:\OS & MC tasks\Task_04\" -SP"D:\OS & MC tasks\PIC16f877A _COTS\HAL\3-KPD\" -SP"D:\OS & MC tasks\PIC16f877A _COTS\HAL\2-CLCD\" -SP"D:\OS & MC tasks\PIC16f877A _COTS\MCAL\1-DIO\" -IP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16\" "KPD.c" "KPD_program.c" "CLCD_program.c" "DIO_program.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl"	 
+hint: 0	1139	Available RAM: 352 [bytes], Available ROM: 8192 [bytes]	 
+diagnostics: 0	122	Compilation Started	std_types.h
+hint: 16	1163	Variable 'Local_u8Result' has been declared, but not used	KPD.c
+diagnostics: 83	123	Compiled Successfully	KPD.c
+diagnostics: 0	122	Compilation Started	std_types.h
+diagnostics: 61	123	Compiled Successfully	KPD_program.c
+diagnostics: 0	122	Compilation Started	std_types.h
+diagnostics: 222	123	Compiled Successfully	CLCD_program.c
+hint: 199	1164	Variable 'Local_u8CGRAMAddress' has been eliminated by optimizer	CLCD_program.c
+diagnostics: 0	122	Compilation Started	std_types.h
+diagnostics: 215	123	Compiled Successfully	DIO_program.c
+diagnostics: 0	127	All files Compiled in 828 ms	 
+hint: 0	1144	Used RAM (bytes): 125 (36%)  Free RAM (bytes): 227 (64%)	Used RAM (bytes): 125 (36%)  Free RAM (bytes): 227 (64%)
+hint: 0	1144	Used ROM (program words): 1497 (18%)  Free ROM (program words): 6695 (82%)	Used ROM (program words): 1497 (18%)  Free ROM (program words): 6695 (82%)
+diagnostics: 0	125	Project Linked Successfully	KPD.mcppi
+diagnostics: 0	128	Linked in 31 ms	 
+diagnostics: 0	129	Project 'KPD.mcppi' completed: 906 ms	 
+diagnostics: 0	103	Finished successfully: 04 Dec 2022, 23:19:16	KPD.mcppi

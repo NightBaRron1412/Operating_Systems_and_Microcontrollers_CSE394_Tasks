@@ -2,6 +2,7 @@
 #include "../../../include/Std_Types.h"
 #include "../../../include/Bit_Math.h"
 #include "DIO_private.h"
+#include "DIO_Config.h"
 #include "DIO_interface.h"
 
 /*------------------------------------Pins functions------------------------------------------------*/
@@ -9,7 +10,7 @@
 /* A function to set the Direction of a pin to either INPUT or OUTPUT */
 void DIO_VidSetPinMode(u8 Copy_u8Port, u8 Copy_u8Pin, u8 Copy_u8Mode)
 {
-    if (Copy_u8Mode == INPUT)
+    if (Copy_u8Mode == INPUT || Copy_u8Mode == INPUT_PULLUP)
     {
         switch (Copy_u8Port)
         {
@@ -21,13 +22,11 @@ void DIO_VidSetPinMode(u8 Copy_u8Port, u8 Copy_u8Pin, u8 Copy_u8Mode)
             {
             case (INPUT_PULLUP):
                 CLR_BIT(OPTION_REG, RBPU);
-                SET_BIT(WPUB, Copy_u8Pin);
                 SET_BIT(TRISB, Copy_u8Pin);
                 break;
             default:
-                CLR_BIT(WPUB, Copy_u8Pin);
+                SET_BIT(OPTION_REG, RBPU);
                 SET_BIT(TRISB, Copy_u8Pin);
-                break;
             }
             break;
         case (PORT_C):
@@ -116,7 +115,7 @@ void DIO_VidSetPinValue(u8 Copy_u8Port, u8 Copy_u8Pin, u8 Copy_u8Value)
 }
 
 /* A function to read the current Value of a pin */
-u8 DIO_u8GetPinValue(u8 Copy_u8Port, u8 Copy_u8Pin, u8 *Copy_Pu8PinValue)
+void DIO_VidGetPinValue(u8 Copy_u8Port, u8 Copy_u8Pin, u8 *Copy_Pu8PinValue)
 {
     switch (Copy_u8Port)
     {
@@ -151,11 +150,10 @@ void DIO_VidSetPortMode(u8 Copy_u8Port, u8 Copy_u8Mode)
         {
         case (PORT_INPUT_PULLUP):
             CLR_BIT(OPTION_REG, RBPU);
-            WPUB = PORT_HIGH;
             TRISB = Copy_u8Mode;
             break;
         default:
-            WPUB = PORT_LOW;
+            SET_BIT(OPTION_REG, RBPU);
             TRISB = Copy_u8Mode;
             break;
         }

@@ -1,0 +1,26 @@
+main
+	__CC2DW
+		____DoICP
+	KPD_VidInit
+		DIO_VidSetPinMode
+	CLCD_VidInit
+		DIO_VidSetPortMode
+		DIO_VidSetPinMode
+		CLCD_VidSendCommand
+			DIO_VidSetPinValue
+			DIO_VidSetPortValue
+	CLCD_VidSendString
+		CLCD_VidSendData
+			DIO_VidSetPortValue
+			DIO_VidSetPinValue
+	KPD_u8GetKey
+		DIO_VidSetPinValue
+		DIO_VidGetPinValue
+	CLCD_VidGotoXY
+		CLCD_VidSendCommand
+			DIO_VidSetPinValue
+			DIO_VidSetPortValue
+	CLCD_VidDisplayClear
+		CLCD_VidSendCommand
+			DIO_VidSetPinValue
+			DIO_VidSetPortValue

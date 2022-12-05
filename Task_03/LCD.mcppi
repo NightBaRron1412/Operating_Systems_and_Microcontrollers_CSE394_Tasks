@@ -59,7 +59,6 @@ Count=0
 [Useses]
 Count=0
 [EXPANDED_NODES]
-0=LCD.mcppi
 1=Sources
 3=..\
 4=PIC16f877A _COTS
@@ -71,9 +70,9 @@ Count=0
 19=2-CLCD
 23=MCAL
 24=1-DIO
-Count=12
+Count=11
 [LIB_EXPANDED_NODES]
-Count=0
+Count=1
 [PROGRAMMER_TYPE]
 Value=mikroE mikroProg
 [CODEGRIP_OPTIONS]

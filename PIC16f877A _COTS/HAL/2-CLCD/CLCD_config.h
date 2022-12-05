@@ -1,4 +1,4 @@
-/** @file CLCD_confing.h
+/** @file CLCD_config.h
  *
  * @brief A header file including functions for CLCD controlling.
  *
@@ -18,13 +18,13 @@
 #define CLCD_u8_MODE CLCD_u8_4BIT
 
 /* Control Port */
-#define CLCD_CTRL_PORT PORT_B
+#define CLCD_CTRL_PORT PORT_D
 #define CLCD_RS_PIN PIN_0
 #define CLCD_RW_PIN PIN_1
 #define CLCD_EN_PIN PIN_2
 
 /* Data Port */
-#define CLCD_DATA_PORT PORT_B
+#define CLCD_DATA_PORT PORT_D
 
 #endif /* CLCD_CONFIG_H */
 

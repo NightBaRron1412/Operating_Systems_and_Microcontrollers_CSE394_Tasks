@@ -11,6 +11,7 @@ typedef float f32;
 typedef double f64;
 #line 1 "d:/os & mc tasks/pic16f877a _cots/mcal/1-dio/../../../include/bit_math.h"
 #line 1 "d:/os & mc tasks/pic16f877a _cots/mcal/1-dio/dio_private.h"
+#line 1 "d:/os & mc tasks/pic16f877a _cots/mcal/1-dio/dio_config.h"
 #line 1 "d:/os & mc tasks/pic16f877a _cots/mcal/1-dio/dio_interface.h"
 #line 15 "d:/os & mc tasks/pic16f877a _cots/mcal/1-dio/dio_interface.h"
 typedef enum
@@ -40,7 +41,7 @@ typedef enum
  PIN_6,
  PIN_7
 
-} enut_DIO;
+} enum_DIO;
 
 
 void DIO_VidSetPinMode(u8 Copy_u8Port, u8 Copy_u8Pin, u8 Copy_u8Mode);
@@ -51,10 +52,10 @@ void DIO_VidGetPinValue(u8 Copy_u8Port, u8 Copy_u8Pin, u8 *Copy_Pu8PinValue);
 void DIO_VidSetPortMode(u8 Copy_u8Port, u8 Copy_u8Mode);
 void DIO_VidSetPortValue(u8 Copy_u8Port, u8 Copy_u8Value);
 void DIO_VidGetPortValue(u8 Copy_u8Port, u8 *Copy_Pu8PortValue);
-#line 10 "D:/OS & MC tasks/PIC16f877A _COTS/MCAL/1-DIO/DIO_program.c"
+#line 11 "D:/OS & MC tasks/PIC16f877A _COTS/MCAL/1-DIO/DIO_program.c"
 void DIO_VidSetPinMode(u8 Copy_u8Port, u8 Copy_u8Pin, u8 Copy_u8Mode)
 {
- if (Copy_u8Mode == INPUT)
+ if (Copy_u8Mode == INPUT || Copy_u8Mode == INPUT_PULLUP)
  {
  switch (Copy_u8Port)
  {
@@ -65,10 +66,12 @@ void DIO_VidSetPinMode(u8 Copy_u8Port, u8 Copy_u8Pin, u8 Copy_u8Mode)
  switch (Copy_u8Mode)
  {
  case (INPUT_PULLUP):
-  ( *((volatile u8 *)0x081) ) |= (1 << ( 7 )) ;
- default:
+  ( *((volatile u8 *)0x081) ) &= ~(1 << ( 7 )) ;
   ( *((volatile u8 *)0x086) ) |= (1 << (Copy_u8Pin)) ;
  break;
+ default:
+  ( *((volatile u8 *)0x081) ) |= (1 << ( 7 )) ;
+  ( *((volatile u8 *)0x086) ) |= (1 << (Copy_u8Pin)) ;
  }
  break;
  case (PORT_C):
@@ -157,7 +160,7 @@ void DIO_VidSetPinValue(u8 Copy_u8Port, u8 Copy_u8Pin, u8 Copy_u8Value)
 }
 
 
-u8 DIO_u8GetPinValue(u8 Copy_u8Port, u8 Copy_u8Pin, u8 *Copy_Pu8PinValue)
+void DIO_VidGetPinValue(u8 Copy_u8Port, u8 Copy_u8Pin, u8 *Copy_Pu8PinValue)
 {
  switch (Copy_u8Port)
  {
@@ -191,8 +194,11 @@ void DIO_VidSetPortMode(u8 Copy_u8Port, u8 Copy_u8Mode)
  switch (Copy_u8Mode)
  {
  case (PORT_INPUT_PULLUP):
-  ( *((volatile u8 *)0x081) ) |= (1 << ( 7 )) ;
+  ( *((volatile u8 *)0x081) ) &= ~(1 << ( 7 )) ;
+  *((volatile u8 *)0x086)  = Copy_u8Mode;
+ break;
  default:
+  ( *((volatile u8 *)0x081) ) |= (1 << ( 7 )) ;
   *((volatile u8 *)0x086)  = Copy_u8Mode;
  break;
  }

@@ -1,7 +1,6 @@
 #include "../include/Std_Types.h"
 #include "../PIC16f877A _COTS/MCAL/1-DIO/DIO_interface.h"
 #include "../PIC16f877A _COTS/HAL/2-CLCD/CLCD_interface.h"
-#include "../PIC16f877A _COTS/HAL/2-CLCD/CLCD_config.h"
 
 void main()
 {
@@ -10,7 +9,6 @@ void main()
 
     CLCD_VidCreatSpecialChar(stickyMan, 1);
     CLCD_VidCreatSpecialChar(stickyMan_handsInverted, 2);
-             DIO_VidSetPortMode(PORT_B, PORT_OUTPUT);
     while (1)
     {
         u8 i = 0;
